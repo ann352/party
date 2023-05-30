@@ -3,17 +3,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         boolean shouldContinue = true;
-
         Party party = new Party();
-
 
         while (shouldContinue) {
             System.out.println("Chose option: ");
             System.out.println("1.Display list of guests");
             System.out.println("2.Add new guest");
-            System.out.println("3.Display dishes");
+            System.out.println("3.Display meals");
             System.out.println("4.Find guest by phone number");
             System.out.println("5.Exit");
 
@@ -30,10 +29,10 @@ public class Main {
                     party.addGuest();
                     break;
                 case 3:
-                    System.out.println("CHOSEN 3");
+                    party.displayMeals();
                     break;
                 case 4:
-                    System.out.println("CHOSEN 4");
+                    party.displayGuestByPhoneNumer();
                     break;
                 case 5:
                     shouldContinue = false;
@@ -41,8 +40,8 @@ public class Main {
                 default:
                     System.out.println("Chose given option");
             }
-
-
         }
     }
 }
+
+            //if we try to find our guest by phone number that doesn't exist we get NullPointerException -> read about exceptions how to treat them in case not to end program
